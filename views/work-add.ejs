@@ -1,0 +1,60 @@
+<%- include('partials/header') %>
+
+<form action='/work-add'>
+     <h2>İş Oluştur</h2>
+     <label for="baslik">Başlık</label>
+     <input type="text" name="baslik" required/>
+     <label for="aciklama">Açıklama</label>
+     <input type="text" name="aciklama" required/>
+
+     <label for="baslama">Başlangıç Tarihi</label>
+     <input type="date" name="baslama" required/>
+     <label for="bitis">Bitiş Tarihi</label>
+     <input type="date" name="bitis" required/>
+
+    <button type="submit">Oluştur</button>
+
+</form>
+
+
+<%- include('partials/footer') %>
+
+<script>
+    //verileri yakalamak
+  const form =document.querySelector('form');
+ 
+
+
+  form.addEventListener('submit',async (e)=>{
+         
+  
+
+      //(tetiklenecek olan video) submit tetiklendiğinde e fonksiyonu tetiklenecek
+    e.preventDefault(); //sıfırlama
+    // verilere erişme name
+    const baslik = form.baslik.value;
+       const aciklama = form.aciklama.value;
+       const baslama = form.baslama.value;
+       const bitis = form.bitis.value;
+      try{
+          const res = await fetch('/work-add',{
+              method:'POST',
+              body:JSON.stringify({baslik,aciklama,baslama,bitis}),
+              headers:{'Content-Type':'application/json'}
+          });
+
+            const data=await res.json();
+
+
+         
+           if (data.work) {
+               location.assign('/works');
+           }         
+
+
+      }catch (error) {
+          console.log(error);
+      }
+     
+  })
+</script>

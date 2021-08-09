@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+
+<ul class="works">
+    <% if(isler.length>0) { %>
+
+        <% isler.forEach(is=>{ %>
+    <li class="work">
+        <img src="/work.png" />
+        <h4><%= is.baslik %></h4>
+       
+    </li>
+    <% }) %>
+    <% } else { %>
+        <div> Henüz iş girilmedi</div>
+        <% } %>
+</ul>
+
+
+<%- include('partials/footer.ejs') %>

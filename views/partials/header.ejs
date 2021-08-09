@@ -1,0 +1,22 @@
+<html>   
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <nav> 
+ <a href= '/'>İş Takip Uygulaması</a>
+  <ul>
+      <% if(user) { %>
+      <li>Hoşgeldin, <%= user.email.split('@')[0] %></li>
+      <li><a href="/logout">Çıkış</a></li>
+
+       <% }else { %>
+      <li><a href="/login">Giriş Yap</a></li>
+      <li><a href="/signup">Kayıt Ol</a></li>
+      
+      <% } %>
+  </ul>
+ </nav>
+
+
+
