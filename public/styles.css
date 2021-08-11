@@ -155,7 +155,19 @@ footer{
 }
 
 
-
+.btn{
+    margin-top: 30px;
+    margin-left: 100px;
+    border-radius: 36px;
+    background: #C4E538;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 00.8em;
+    display: block;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+}
 
 
 

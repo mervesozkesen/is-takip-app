@@ -9,6 +9,7 @@ const app = express(); //Bir application oluşturdum.
 
 //middle ware
 app.use(express.static('public')); //klasörleri çalıştırmak için
+
 app.use(express.json());
 app.use(cookieParser());
 
